@@ -26,22 +26,21 @@ and ```Object.__defineQSetter__```
 
 Define an object ```foo``` with a property ```.bar```
 ```
-	var foo	= {
-		bar	: 32
-	};
+var foo	= {
+	bar	: 32
+};
 ```
 
 Define an property getter for ```foo.bar```
 
 ```
-	foo.__defineQGetter__('bar', function(value){
-		return value*2;
-	});
+foo.__defineQGetter__('bar', function(value){
+	return value*2;
+});
 ```
 
 Uses the property
 
 ```
-	console.log('foo.bar', foo.bar);
-	// will output "64", so 32 * 2
-//
+console.log('foo.bar', foo.bar);
+// will output "64", so 32 * 2
