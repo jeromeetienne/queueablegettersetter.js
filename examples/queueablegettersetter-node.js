@@ -1,17 +1,21 @@
 #!/usr/bin/env node
 
 // get the class
-var debug	= require('../src/queuablegettersetter.js');
+var debug	= require('../src/queueablegettersetter.js');
 
 var foo		= {
-	x	: 3
+	bar	: 'hello'
 };
 
-console.log('before new getter: foo.x ===', foo.x)
+console.log('before new getter: foo.bar ===', foo.bar)
 
-foo.__defineQGetter__('x', function(value){
-	return value*2;
+foo.__defineQGetter__('bar', function(value){
+	return value + ', world.';
 });
 
-console.log('after new getter: foo.x ===', foo.x)
+foo.__defineQGetter__('bar', function(value){
+	return value + ' I love you.';
+});
+
+console.log('after new getter: foo.bar ===', foo.bar)
 

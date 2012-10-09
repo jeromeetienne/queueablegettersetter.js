@@ -20,6 +20,11 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style>
+		.slides section em {
+			color: #FF6347;
+		}
+		</style>
 
 		<script>
 			// If the query includes 'print-pdf' we'll use the PDF print sheet
@@ -48,6 +53,19 @@
 	### like getter/setter but better
 </section>
 <section data-markdown>
+	# Info
+	
+	* repository on [github](https://github.com/jeromeetienne/queuablegettersetter.js)
+	* under [MIT license](http://jetienne.mit-license.org)
+	* written by [jerome etienne](http://jetienne.com)
+</section>
+<section data-markdown>
+	# part of debug.js
+
+	* larger effort 
+	* Let's make javascript easier to debug
+</section>
+<section data-markdown>
 	### property getter setter
 	
 	* used to intercept property access
@@ -56,37 +74,37 @@
 	  * Object.\_\_defineSetter\_\_
 </section>
 <section data-markdown>
-	### Official \_\_defineGetter\_\_
+	### Example of \_\_defineGetter\_\_
 	
 	Before
 	```
-	var foo	= {
-		bar	: 1
+	var foo    = {
+	    bar    : 1
 	};
 	console.log("bar", foo.bar);
 	// display in console "1"
 	```
-	
+
 	After
 	```
 	foo.__defineGetter__('bar', function(){
-		return 2;
+	    return 2;
 	});
-	console.log("bar", bar);
-	// display in console $ 2
+	console.log("bar", foo.bar);
+	// display in console "2"
 	```
 </section>
 <section data-markdown>
 	### Any issues ? NOT QUEUABLE
 	
 	```
-	var foo	= { bar	: 1 };
+	var foo    = { bar    : 1 };
 	foo.__defineGetter__('bar', function(){
-		console.log("blabla")
-		return 2;
+	    console.log("blabla")
+	    return 2;
 	});
 	foo.__defineGetter__('bar', function(){
-		return 3;
+	    return 3;
 	});
 	console.log("bar", foo.bar);
 	// display in console "3" and not "blabal"
@@ -105,34 +123,66 @@
 	
 	just add a 'Q'
 	```
-	// define the object as usual
-	var foo	= {
-		bar	: 32
-	};
-	
-	// add a first getter which double the value
-	foo.__defineQGetter__('bar', function(value){
-		return value*2;
-	});
-	
-	// add a second getter which add one to the value
-	foo.__defineQGetter__('bar', function(value){
-		return value+1;
-	});
+// define the object as usual
+var foo    = {
+    bar    : 32
+};
 
-	// display the value of foo.bar
-	console.log( foo.bar )
+// add a first getter which double the value
+foo.__defineQGetter__('bar', function(value){
+    return value*2;
+});
 
-	// outputs "65" so they are queued! :)
+// add a second getter which add one to the value
+foo.__defineQGetter__('bar', function(value){
+    return value+1;
+});
+
+// display the value of foo.bar
+console.log( foo.bar )
+
+// outputs "65" so they are queued! :)
 	```
 	
 	Same for Object.\_\_defineQSetter\_\_
 </section>
 <section data-markdown>
-	# Info
+	# Works EveryWhere
 	
-	* repository on [github](https://github.com/jeromeetienne/queuablegettersetter.js)
-	* under [MIT license](http://jetienne.mit-license.org)
+	### Same Way in *browser* and *node.js*
+</section>
+<section data-markdown>
+	## Works in node.js
+	
+	Install
+
+	```
+	npm install queueablegettersetter.js
+	```
+	
+	Test
+	```
+$ make test
+
+  ✓ Object.__defineQGetter__ is able to get without error: 0ms
+  ✓ Object.__defineQSetter__ is able to set without error: 0ms
+  ✓ Object.__defineQSetter__ is able to get without error: 0ms
+
+  ✔ 3 tests complete (3 ms)
+	```
+</section>
+<section data-markdown>
+	## Works in Browser
+	
+	Install
+
+	```
+	<script src="queuablegettersetter.js"></script>
+	```
+	
+	Test
+	
+	<img src="images/mocha-browser.png">
 </section>
 <section data-markdown>
 	# The End

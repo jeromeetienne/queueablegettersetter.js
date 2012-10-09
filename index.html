@@ -50,29 +50,56 @@
     </div>
 
     <div class="container">
-	<!-- Main hero unit for a primary marketing message or call to action -->
-	<div class="hero-unit">
-		<h1>Queueable Getter Setter.js</h1>
-		<p>
-			Queueable Getter Setter for Javascript.
-		</p>
-		<a class="btn btn-primary btn-large" href="https://github.com/jeromeetienne/queueablegettersetter.js">Learn more &raquo;</a></p>
+  <div class="row">
+    <div class="span6">
+      <h1>QueuableGetterSetter.js</h1>
+      <h1><small>Like Getter Setter but Queueable</small></h1>
+      <h2>  <a href="/docs/slides/">Slides</a> 
+          - <a href="/docs/jsdocs/">JsDoc</a>
+          - <a href="https://github.com/jeromeetienne/queueablegettersetter.js/">GitHub</a></h2>
+      <pre>// define an object 
+var foo = { bar : 'hello' };
+// define a first getter
+foo.__defineQGetter__('bar', function(value){
+    return value+ ', world.';
+});
+// define a second getter
+foo.__defineQGetter__('bar', function(value){
+    return value+ ' I love you!';
+});
+// display the value of foo.bar
+console.log(foo.bar)
+// output a love message
+// "Hello, world. I love you!"
+</pre>
+    </div>
+    <div class="span6">
+<iframe width="560" height="315" src="http://www.youtube.com/embed/IPpGJ9GCOw0" frameborder="0" allowfullscreen></iframe>
+    </div>
 	</div>
-	<div class="row">
-		<div class="span12">
-			<h2>Features</h2>
-			<ul>
-				<li>type checking</li>
-				<li>variable value bound checking</li>
-				<li>NaN detection</li>
-				<li>assert which actually stop excecution</li>
-				<li>funciton attribute</li>
-				<li>Function call wrapper</li>
-				<li>queueable getter setter</li>
-				<li>stack extraction (soon)</li>
-			</ul>
-		</div>
-	</div>
+  <div class="row">
+    <div class="span6">
+      <h3>Define an object<h3>
+      <pre>var foo = {
+  bar : 1
+};</pre>
+      <h3>Just add a 'Q'</h3>
+      <pre class='prettyprint'>
+foo.__defineGetter__('foo', function(){
+    return 2;
+});
+      </pre>
+    </div>
+    <div class="span6">
+      <h3>Queueable Getter Setter.js</h3>
+      <pre class='prettyprint'>
+foo.__defineQGetter__('foo', function(value){
+    return value*2;
+});
+      </pre>
+      <h3>Just add a 'Q' :)</h3>
+    </div>
+  </div>
     </div> <!-- /container -->
 
     <!-- Le javascript
