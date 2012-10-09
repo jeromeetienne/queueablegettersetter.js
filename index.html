@@ -53,53 +53,43 @@
   <div class="row">
     <div class="span6">
       <h1>QueuableGetterSetter.js</h1>
-      <h1><small>Like Getter Setter but Queueable</small></h1>
+      <h1><small>&ldquo;Like Getter Setter but Queueable&rdquo;</small></h1>
       <h2>  <a href="/docs/slides/">Slides</a> 
           - <a href="/docs/jsdocs/">JsDoc</a>
           - <a href="https://github.com/jeromeetienne/queueablegettersetter.js/">GitHub</a></h2>
-      <pre>// define an object 
+      <hr>
+      <h1>How to use it ?</h1>
+      <h4>Define an Object</h4>
+      <pre>define an object 
 var foo = { bar : 'hello' };
-// define a first getter
-foo.__defineQGetter__('bar', function(value){
+</pre>
+      <h4>Define a First and a Second Getter</h4>
+      <pre>foo.__defineQGetter__('bar', function(value){
     return value+ ', world.';
 });
-// define a second getter
 foo.__defineQGetter__('bar', function(value){
     return value+ ' I love you!';
 });
-// display the value of foo.bar
-console.log(foo.bar)
+</pre>
+      <h4>Use foo.bar Value</h4>
+      <pre>console.log(foo.bar)
 // output a love message
 // "Hello, world. I love you!"
 </pre>
     </div>
     <div class="span6">
-<iframe width="560" height="315" src="http://www.youtube.com/embed/IPpGJ9GCOw0" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/IPpGJ9GCOw0" frameborder="0" allowfullscreen></iframe>
+      <hr>
+      <h1>How to install it ?</h1>
+      <h4>in node.js<h4>
+      <pre>$ npm install queueablegettersetter.js
+      </pre>
+      <h4>in browser</h4>
+      <pre>
+&lt;script src="queuablegettersetter.js">&lt;/script> 
+     </pre>
     </div>
 	</div>
-  <div class="row">
-    <div class="span6">
-      <h3>Define an object<h3>
-      <pre>var foo = {
-  bar : 1
-};</pre>
-      <h3>Just add a 'Q'</h3>
-      <pre class='prettyprint'>
-foo.__defineGetter__('foo', function(){
-    return 2;
-});
-      </pre>
-    </div>
-    <div class="span6">
-      <h3>Queueable Getter Setter.js</h3>
-      <pre class='prettyprint'>
-foo.__defineQGetter__('foo', function(value){
-    return value*2;
-});
-      </pre>
-      <h3>Just add a 'Q' :)</h3>
-    </div>
-  </div>
     </div> <!-- /container -->
 
     <!-- Le javascript
