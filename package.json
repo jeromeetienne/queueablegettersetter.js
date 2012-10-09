@@ -1,0 +1,26 @@
+{
+  "name": "queuablegettersetter.js",
+  "version": "0.0.0",
+  "description": "Queuable Getter Setter for Javascript",
+  "main": "src/queuablegettersetter.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeromeetienne/queuablegettersetter.js.git"
+  },
+  "keywords": [
+    "queue",
+    "getter",
+    "setter",
+    ""
+  ],
+  "author": "Jerome Etienne <jerome.etienne@gmail.com>",
+  "license": "MIT"
+}
