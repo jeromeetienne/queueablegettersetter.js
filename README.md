@@ -3,7 +3,8 @@ queueablegettersetter.js
 
 see the [homepage](http://jeromeetienne.github.com/queueablegettersetter.js/) or the [videos](http://www.youtube.com/watch?v=IPpGJ9GCOw0)
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/IPpGJ9GCOw0" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/IPpGJ9GCOw0" frameborder="0" allowfullscreen>
+</iframe>
 
 ### How to install it
 
