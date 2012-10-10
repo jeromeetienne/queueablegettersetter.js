@@ -2,7 +2,7 @@
 //		Implement queuable getter setter				//
 //////////////////////////////////////////////////////////////////////////////////
 
-/**
+/*
  * by default __defineGetter__ support only one function. Same for __defineSetter
  * This is a annoying limitation. This little library declares 2 functions
  * Object.__defineQGetter__ and Object.__defineQGetter__.
@@ -15,7 +15,6 @@
 (function(){
 	/**
 	 * Class to implement queueable getter/setter
-	 * @class 
 	 * 
 	 * @param  {Object} baseObject The base object on which we operate
 	 * @param  {String} property   The string of property
